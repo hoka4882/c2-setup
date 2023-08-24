@@ -12,8 +12,9 @@ else
     sed -i "/#\$nrconf{restart} = 'i';/s/.*/\$nrconf{restart} = 'a';/" /etc/needrestart/needrestart.conf
 
     #Update and Upgrade
-    echo "Updating and Upgrading"
+    echo "[start.sh] Updating and Upgrading"
     apt-get -yqq update && sudo apt-get upgrade -yqq > apt-get.log
-    
+
+    echo "[start.sh] Installing apache"
     install_apache2
 fi
