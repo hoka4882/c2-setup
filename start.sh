@@ -1,5 +1,9 @@
 #!/bin/bash
 
+install_apache2 () {
+    apt-get -yqq install apache2
+}
+
 if [[ $EUID -ne 0 ]]; then
    	echo "This script must be run as root" 
    	exit 1
@@ -10,5 +14,6 @@ else
     #Update and Upgrade
     echo "Updating and Upgrading"
     apt-get -yqq update && sudo apt-get upgrade -yqq > apt-get.log
-    #vscode
+    
+    install_apache2
 fi
