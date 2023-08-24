@@ -6,6 +6,6 @@ if [[ $EUID -ne 0 ]]; then
 else
     #Update and Upgrade
     echo "Updating and Upgrading"
-    apt-get update && sudo apt-get upgrade -y
+    apt-get -yqq update && sudo apt-get upgrade -yqq
     #vscode
 fi
